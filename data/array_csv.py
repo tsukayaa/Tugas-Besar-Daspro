@@ -6,11 +6,11 @@ game = [["id","nama","kategori","tahun_rilis","harga", "stok"],
         ["GAME048", "Epep", "Battle", "2019", 10000, 2]]
 
 user = [["id", "username", "nama", "password", "role", "saldo"],
-        ["USER001","gege_akutami09", "Gege Akutami", "JJK0outnow", "Admin", 20000000],
-        ["USER002","sparkle__nobara", "Nobara Kugisaki", "buymecuteoutfits", "User", 5000000],
-        ["USER003", "itadori669", "Yuji Itadori", "Gojosensei_socool", "User", 7000000],
-        ["USER004", "Megumi", "Megumi Fushiguro", "iwannasleep", "User", 10000000],
-        ["USER005", "TheStrongest", "Gojo Satoru", "yowaimo", "Admin", 17000000]]
+        ["ADMIN001","gege_akutami09", "Gege Akutami", "JJK0outnow", "Admin", 20000000],
+        ["USER001","sparkle__nobara", "Nobara Kugisaki", "buymecuteoutfits", "User", 5000000],
+        ["USER002", "itadori669", "Yuji Itadori", "Gojosensei_socool", "User", 7000000],
+        ["USER003", "Megumi", "Megumi Fushiguro", "iwannasleep", "User", 10000000],
+        ["ADMIN002", "TheStrongest", "Gojo Satoru", "yowaimo", "Admin", 17000000]]
 
 kepemilikan = [["game_id", "user_id"],
                ["GAME001", "ayam jago"],

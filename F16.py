@@ -21,7 +21,7 @@ def make(NewFile,FolderName):
     os.replace(NewFile, FileLoc)
 
 #Algoritma
-#input=save (admin menginput 'save')
+#input=save (admin menginput perintah 'save')
 folder=str(input("Masukkan nama folder penyimpanan: "))
 file_user=str(input('Masukan nama file user : '))
 file_game=str(input('Masukan nama file game : '))

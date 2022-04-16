@@ -1,4 +1,15 @@
+def filtergame(file,keyword,key):
 
+    if keyword == '':
+        return file
+    else:
+        arr = []
+        for i in range(length(file)):
+            # print(file[i][key])
+            if(file[i][key] == keyword):
+                arr += [file[i]]
+        # print(arr)
+        return arr
 
 def length(filename): #Fungsi len dengan implementasi sendiri
     count = 0

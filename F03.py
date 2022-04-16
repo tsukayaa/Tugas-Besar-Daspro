@@ -8,11 +8,8 @@
 
 # akses: admin dan user
 # >>> login
-# username = input("Masukkan username: ")
-# password = input("Masukkan password: ")
 
 from array_csv import user
-from perpustakaan_fungsi import length
 
 def login(users):
     global aksesadmin
@@ -21,17 +18,14 @@ def login(users):
         username_input = input("Masukkan username : ")
         password_input = cipher_pass(input("Masukkan password : "))
 
-        # corner case: apa yg terjadi bila user.csv kosong ?
-        for data in users:
-            if data[1] == username_input and data[3] == password_input:
-                print('Halo ' + username_input + '! Selamat datang di Kantong Ajaib')
+        for row in user:
+            if row[1] == username_input and row[3] == password_input:
+                print('Halo ' + username_input + '! Selamat datang di "Binomo".')
 
-                if data[4] == 'Admin':
+                if row[4] == 'Admin':
                     aksesadmin = True
                 else:
                     aksesadmin = False
                 idcurrentuser = data[0]
                 #akses['akun'] = data
                 return akses
-
-        print("Credentials anda salah. Silahkan coba lagi")

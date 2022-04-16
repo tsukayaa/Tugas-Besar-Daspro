@@ -20,18 +20,19 @@
 # kategori = input("Masukkan kategori: ")
 # tahun_rilis = input("Masukkan tahun rilis: ")
 # harga = input("Masukkan harga: ")
-def ubah_game(id, nama, kategori, rilis, harga):
+def ubah_game():
+    global game_data
     for row in range (1, length(game)):
-        if game[row][0] == id:
+        if game_data[row][0] == id:
             if (nama != ''):
-                game[row][1] = nama
+                game_data[row][1] = nama
             if (kategori != ''):
-                game[row][2] = kategori
+                game_data[row][2] = kategori
             if (rilis != ''):
-                game[row][3] = rilis
+                game_data[row][3] = rilis
             if (harga != ''):
-                game[row][4] = harga
-    return game
+                game_data[row][4] = harga
+    return game_data
 
 
 

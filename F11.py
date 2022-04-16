@@ -1,6 +1,6 @@
 from helpbase import *
 
-def search_game_at_store (id_game) :
+def search_game_at_store () :
     id_game = input("Masukkan ID Game: ")
     nama_game = input("Masukkan Nama Game: ")
     harga_game = input("Masukkan Harga Game: ")
@@ -11,4 +11,4 @@ def search_game_at_store (id_game) :
     for i in range (length(arr)) :
         print(arr[i][0], " | ", arr[i][1], " | ", arr[i][4], " | ", arr[i][2], " | ", arr[i][3], " | ", arr[i][5])
 
-search_game_at_store("GAME002")
+search_game_at_store()

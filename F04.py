@@ -11,20 +11,26 @@
 # pada fungsi ini, penambahan game dimasukkan ke memori bukan ke csv
 
 # >>> tambah_game
-from array_csv import game
+from helpbase import *
 
-def tambah_game(nama_game, kategori_game, tahun_rilis, harga_game, stok_awal):
+def tambah_game():
+    global game_data
+    nama_game = ''
+    kategori_game = ''
+    tahun_rilis = ''
+    harga_game = ''
+    stok_awal = ''
     while (nama_game=='') or (kategori_game=='') or (tahun_rilis=='') or (harga_game=='') or (stok_awal==''):
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO")
-        nama_game = input("Masukkan nama game: ")
-        kategori_game = input("Masukkan kategori: ")
-        tahun_rilis = input("Masukkan tahun rilis: ")
-        harga_game = input("Masukkan harga: ")
-        stok_awal = input("Masukkan stok awal: ")
-    else:
-        print('Selamat! Berhasil menambahkan game', nama_game)
-        game_baru = [[nama_game, kategori_game, tahun_rilis, harga_game, stok_awal]]
-    return (game+game_baru)
+        nama_game = str(input("Masukkan nama game: "))
+        kategori_game = str(input("Masukkan kategori: "))
+        tahun_rilis = str(input("Masukkan tahun rilis: "))
+        harga_game = str(input("Masukkan harga: "))
+        stok_awal = str(input("Masukkan stok awal: "))
+    print('Selamat! Berhasil menambahkan game', nama_game)
+    game_baru = [nama_game, kategori_game, tahun_rilis, harga_game, stok_awal]
+    game_data += [game_baru]
+    return 
 
 # nama_game = input("Masukkan nama game: ")
 # kategori_game = input("Masukkan kategori: ")

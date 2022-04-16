@@ -9,7 +9,7 @@
 
 # akses: admin
 # >>> register
-from array_csv import user
+# from array_csv import user
 from perpustakaan_fungsi import length
 
 def validasi_reg(username_user):
@@ -20,7 +20,10 @@ def validasi_reg(username_user):
         else:
             return True
 
-def regis(nama, username, password):
+def regis():
+    nama = input("Masukkan nama: ")
+    username = input("Masukkan username: ")
+    password = input("Masukkan password: ")
     while validasi_reg(username) == False:
         print("Username hanya boleh mengandung alfabet (A-Z & a-z), underscore (_), strip (-), dan angka (0-9)")
         nama = input("Masukkan nama: ")
@@ -28,7 +31,7 @@ def regis(nama, username, password):
         password = input("Masukkan password: ")
     else:
         for row in user:
-            if user[row][1] == username :
+            if row[1] == username :
                 print('Username', username, 'sudah terpakai, silakan menggunakan username lain')
                 break
             else:
@@ -36,6 +39,6 @@ def regis(nama, username, password):
     return (user + user_baru)
 
 
-# nama = input("Masukkan nama: ")
-# username = input("Masukkan username: ")
-# password = input("Masukkan password: ")
+# 
+# 
+# 

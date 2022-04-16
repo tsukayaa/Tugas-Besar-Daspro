@@ -78,5 +78,4 @@ def list_game_toko():
     else:
         print("Skema sorting tidak valid!")
 
-list_game_toko()
 

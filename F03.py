@@ -14,9 +14,24 @@
 from array_csv import user
 from perpustakaan_fungsi import length
 
-def login(username, password):
-    for row in range (length(user)):
-        if user[row][1] != username or user[row][3] != password:
-            print("Password atau username salah atau tidak ditemukan.")
-        else:
-            print('Halo', user[row][2], '! Selamat datang di "Binomo".')
+def login(users):
+    global aksesadmin
+    global idcurrentuser
+    while True:
+        username_input = input("Masukkan username : ")
+        password_input = cipher_pass(input("Masukkan password : "))
+
+        # corner case: apa yg terjadi bila user.csv kosong ?
+        for data in users:
+            if data[1] == username_input and data[3] == password_input:
+                print('Halo ' + username_input + '! Selamat datang di Kantong Ajaib')
+
+                if data[4] == 'Admin':
+                    aksesadmin = True
+                else:
+                    aksesadmin = False
+                idcurrentuser = data[0]
+                #akses['akun'] = data
+                return akses
+
+        print("Credentials anda salah. Silahkan coba lagi")

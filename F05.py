@@ -11,18 +11,17 @@
 # berfungsi mengubah data yang ada pada csv
 
 # >>> ubah_game
-# from perpustakaan_fungsi import length
+from helpbase import length
 # from array_csv import game
 
-# inisiasi
-# id_game = input("Masukkan ID Game: ")
-# nama_game = input("Masukkan nama game: ")
-# kategori = input("Masukkan kategori: ")
-# tahun_rilis = input("Masukkan tahun rilis: ")
-# harga = input("Masukkan harga: ")
 def ubah_game():
     global game_data
-    for row in range (1, length(game)):
+    id_game = input("Masukkan ID Game: ")
+    nama_game = input("Masukkan nama game: ")
+    kategori = input("Masukkan kategori: ")
+    tahun_rilis = input("Masukkan tahun rilis: ")
+    harga = input("Masukkan harga: ")
+    for row in range (1, length(game_data)):
         if game_data[row][0] == id:
             if (nama != ''):
                 game_data[row][1] = nama

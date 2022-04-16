@@ -18,4 +18,10 @@ def remove_last (arr): #arr.pop
         arr_baru[i] = arr[i]
     return arr_baru
 
-def 
+def slicing (arr,n,m): #arr[1:]
+    arr_baru = [0 for i in arr]
+    for i in range (n, m):
+        arr_baru[i] = arr[i]
+    return arr_baru
+
+        

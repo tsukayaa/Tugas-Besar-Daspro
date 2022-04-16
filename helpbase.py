@@ -10,7 +10,22 @@ def filtergame(file,keyword,key):
                 arr += [file[i]]
         # print(arr)
         return arr
+    
+def filterkepemilikan(file,id):
+    id = str(id)
+    arr = []
+    for i in range(length(file)):
+        for j in range(length(kepemilikan_data)):
+            #print(file[i][0],kepemilikan_data[j][0],kepemilikan_data[j][1],id)
+            if (file[i][0] == kepemilikan_data[j][0] and id == kepemilikan_data[j][1]):
+               # print('a')
+                arr += file[i]
+                print(kepemilikan_data[j][0], " | ", file[i][1], " | ", file[i][4], " | ", file[i][2], " | ", file[i][3])
+    # print(arr)
+    return arr
 
+# filterkepemilikan(filtergame(game_data,'2022',3),1)
+    
 def length(filename): #Fungsi len dengan implementasi sendiri
     count = 0
     for i in filename:

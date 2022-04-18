@@ -1,4 +1,4 @@
-from perpustakaan_fungsi import length
+from helpbase import *
 
 def topup () :
     global user_data
@@ -22,7 +22,7 @@ def topup () :
             newbalance = int(saldo) + balance
             user_data[urutanID][5] = str(newbalance)
             print(f"Top up berhasil. Saldo {nama} bertambah menjadi {newbalance}.")
-    return user
+    return user_data
 topup()
 
 

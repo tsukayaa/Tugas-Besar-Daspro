@@ -22,7 +22,7 @@ def make(NewFile,FolderName):
     os.replace(NewFile, FileLoc)
 
 #Algoritma
-#input=save (admin menginput perintah 'save')
+#>>> save
 def save():
     folder=str(input("Masukkan nama folder penyimpanan: "))
 

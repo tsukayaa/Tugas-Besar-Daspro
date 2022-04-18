@@ -21,27 +21,35 @@ def make(NewFile,FolderName):
     os.replace(NewFile, FileLoc)
 
 #Algoritma
-#>>> save (admin menginput perintah 'save')
-folder=str(input("Masukkan nama folder penyimpanan: "))
-file_user=str(input('Masukan nama file user : '))
-file_game=str(input('Masukan nama file game : '))
-file_riwayat=str(input('Masukan nama file riwayat : '))
-file_kepemilikan=str(input('Masukan nama file kepemilikan : '))
+#input=save (admin menginput perintah 'save')
+def save():
+    folder=str(input("Masukkan nama folder penyimpanan: "))
 
-if find(folder):
-    make(file_user, folder)
-    make(file_game,folder)
-    make(file_riwayat, folder)
-    make(file_kepemilikan, folder)
-    #Kemudian data yang telah diolah dari fungsi sebelumnya dipindahkan ke file yang telah dibuat
-    
-else: #Jika nama folder penyimpanan yang diinput belum ada di parent_dir, maka buat folder baru
-    create(folder)
-    make(file_user, folder)
-    make(file_game,folder)
-    make(file_riwayat, folder)
-    make(file_kepemilikan, folder)
-    #Kemudian data yang telah diolah dari fungsi sebelumnya dipindahkan ke file yang telah dibuat
+    if find(folder):
+        # Program akan membuat file kosong baru (user.csv, game.csv, riwayat.csv, kepemilikan.csv) di folder
+        # File kosong tersebut akan menggantikan file lama yang sudah ada
+        make("user.csv", folder)
+        make("game.csv",folder)
+        make("riwayat.csv", folder)
+        make("kepemilikan.csv", folder)
+        # program akan memindahkan data dari array ke file kosong baru dengan fungsi rewrite
+        #rewrite("user.csv")
+        #rewrite("game.csv")
+        #rewrite("riwayat.csv")
+        #rewrite("kepemilikan.csv")
+        
+    else: #Jika nama folder penyimpanan yang diinput belum ada di parent_dir, maka buat folder baru
+        create(folder)
+        #Program akan membuat file baru (user.csv, game.csv, riwayat.csv, kepemilikan.csv) di folder
+        make("user.csv", folder)
+        make("game.csv",folder)
+        make("riwayat.csv", folder)
+        make("kepemilikan.csv", folder)
+        #rewrite("user.csv")
+        #rewrite("game.csv")
+        #rewrite("riwayat.csv")
+        #rewrite("kepemilikan.csv")
+
 
 
 

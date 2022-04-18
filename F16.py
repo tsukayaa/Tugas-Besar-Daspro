@@ -1,6 +1,7 @@
 import os
+#from helpbase import *
 
-parent_dir = 'C:\\Users\\Haziq\\Desktop\\TUBES DASPRO' #Parent directory, letak semua file dan program terkait tubes, bisa disesuaikan 
+parent_dir = 'Tugas-Besar-Daspro' #Parent directory, letak semua file dan program terkait tubes
 
 # Mencari apakah folder (F) sudah ada di parent_dir, True jika sudah ada, dan False jika belum ada
 def find(F):
@@ -32,7 +33,7 @@ def save():
         make("game.csv",folder)
         make("riwayat.csv", folder)
         make("kepemilikan.csv", folder)
-        # program akan memindahkan data dari array ke file kosong baru dengan fungsi rewrite
+        # Program akan memindahkan data dari array ke file kosong baru dengan fungsi rewrite
         #rewrite("user.csv")
         #rewrite("game.csv")
         #rewrite("riwayat.csv")
@@ -45,6 +46,7 @@ def save():
         make("game.csv",folder)
         make("riwayat.csv", folder)
         make("kepemilikan.csv", folder)
+        # program akan memindahkan data dari array ke file baru dengan fungsi rewrite
         #rewrite("user.csv")
         #rewrite("game.csv")
         #rewrite("riwayat.csv")

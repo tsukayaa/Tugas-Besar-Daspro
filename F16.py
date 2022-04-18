@@ -46,7 +46,7 @@ def save():
         make("game.csv",folder)
         make("riwayat.csv", folder)
         make("kepemilikan.csv", folder)
-        # program akan memindahkan data dari array ke file baru dengan fungsi rewrite
+        # Program akan memindahkan data dari array ke file baru dengan fungsi rewrite
         #rewrite("user.csv")
         #rewrite("game.csv")
         #rewrite("riwayat.csv")

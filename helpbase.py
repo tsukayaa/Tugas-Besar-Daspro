@@ -86,10 +86,10 @@ def split_csv(string, delimiters=";\n"):
         if i not in delimiters:
             word += i
         elif word:
-            result.append(word)
+            result += (word)
             word = ""
     if word:
-        result.append(word)
+        result += (word)
     return result
 
 
@@ -103,9 +103,9 @@ def get_header(filename):
         return head_data
 
 def remove_if_last_enter(arr):
-    last_member = arr[len(arr) - 1]
-    if last_member[len(last_member) - 1] == '\n':
-        arr[len(arr) - 1] = last_member[:len(last_member) - 1]
+    last_member = arr[length(arr) - 1]
+    if last_member[length(last_member) - 1] == '\n':
+        arr[length(arr) - 1] = last_member[:length(last_member) - 1]
 
     return arr
     #######################
@@ -130,7 +130,7 @@ def change_to_array(filename):
 
     head = get_header(filename)
     clean = []
-    return_data = []
+   # return_data = []
 
     for data in arr:
         clean += [split_csv(data)]
@@ -176,4 +176,4 @@ def rewrite(filename):
 kepemilikan_data = change_to_array('data/kepemilikan.csv')
 game_data = change_to_array('data/game.csv')
 user_data = change_to_array('data/user.csv')
-#riwayat_data = change_to_dictionary('data/riwayat.csv')
+riwayat_data = change_to_dictionary('data/riwayat.csv')

@@ -1,31 +1,5 @@
-def filtergame(file,keyword,key):
 
-    if keyword == '':
-        return file
-    else:
-        arr = []
-        for i in range(length(file)):
-            # print(file[i][key])
-            if(file[i][key] == keyword):
-                arr += [file[i]]
-        # print(arr)
-        return arr
-    
-def filterkepemilikan(file,id):
-    id = str(id)
-    arr = []
-    for i in range(length(file)):
-        for j in range(length(kepemilikan_data)):
-            #print(file[i][0],kepemilikan_data[j][0],kepemilikan_data[j][1],id)
-            if (file[i][0] == kepemilikan_data[j][0] and id == kepemilikan_data[j][1]):
-               # print('a')
-                arr += file[i]
-                print(kepemilikan_data[j][0], " | ", file[i][1], " | ", file[i][4], " | ", file[i][2], " | ", file[i][3])
-    # print(arr)
-    return arr
 
-# filterkepemilikan(filtergame(game_data,'2022',3),1)
-    
 def length(filename): #Fungsi len dengan implementasi sendiri
     count = 0
     for i in filename:
@@ -54,7 +28,7 @@ def search_id(ID) :
 #
 #     return int(last_element['id'])
 
-def change_to_csv(filename, query): #ini digunakan untuk game.csv dan user.csv
+def change_to_csv(filename, query): #ini digunakan untuk mengubah array temp menjadi csv
     head = get_header(filename)
     string = ''
   # #  x = query.get('id'
@@ -86,16 +60,16 @@ def split_csv(string, delimiters=";\n"):
         if i not in delimiters:
             word += i
         elif word:
-            result += (word)
+            result.append(word)
             word = ""
     if word:
-        result += (word)
+        result.append(word)
     return result
 
 
 
 def get_header(filename):
-    with open(filename, 'r') as file_data:
+    with open(filename, 'r',encoding='utf-8') as file_data:
         head_data = file_data.readlines()[0]
         head_data = split_csv(head_data)
 
@@ -103,17 +77,16 @@ def get_header(filename):
         return head_data
 
 def remove_if_last_enter(arr):
-    last_member = arr[length(arr) - 1]
-    if last_member[length(last_member) - 1] == '\n':
-        arr[length(arr) - 1] = last_member[:length(last_member) - 1]
+    last_member = arr[len(arr) - 1]
+    if last_member[len(last_member) - 1] == '\n':
+        arr[len(arr) - 1] = last_member[:len(last_member) - 1]
 
     return arr
     #######################
 
 def get_all_data(filename):
-    with open(filename, 'r') as f:
+    with open(filename, 'r',encoding='utf-8') as f:
         read_line = f.readlines()
-
     arr = []
     for line in read_line:
         arr += remove_if_last_enter([line])
@@ -130,7 +103,7 @@ def change_to_array(filename):
 
     head = get_header(filename)
     clean = []
-   # return_data = []
+    return_data = []
 
     for data in arr:
         clean += [split_csv(data)]
@@ -171,9 +144,16 @@ def rewrite(filename):
 # def rewrite(filename)
 #     global game_data,kepemilikan_data,users_data,riwayat_data
 #     with open('data/' + filename, 'r') :
-
+def slicing (arr,n,m): #arr[1:]
+    arr_baru = []
+    for i in range (n, m):
+        arr_baru += arr[i]
+    return arr_baru
 
 kepemilikan_data = change_to_array('data/kepemilikan.csv')
 game_data = change_to_array('data/game.csv')
 user_data = change_to_array('data/user.csv')
-riwayat_data = change_to_dictionary('data/riwayat.csv')
+aksesadmin = False #untuk menandakan apakah role user sekarang adalah admin/user
+idcurrentuser = None #id dari user yang login sekarang, digunakan sebagai parameter
+                    #dari fungsi yang memerlukan id user
+#riwayat_data = change_to_dictionary('data/riwayat.csv')

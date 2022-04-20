@@ -1,4 +1,4 @@
-from autentikasi import *
+
 from autentikasi import *
 from allfunction import *
 from helpbase import *

@@ -1,4 +1,3 @@
-
 # from array_csv import user
 # File ini merupakan semua fungsi utama pada F02 dan F03 dan bonus FB01
 from helpbase import *
@@ -21,8 +20,7 @@ def validasi_reg(username_user):
         kondisi_salah = (0 <= ord(username_user[i]) <= 44 or 46 <= ord(username_user[i]) <= 47 or 58 <= ord(username_user[i]) <= 64 or 91 <= ord(username_user[i]) <= 94 or ord(username_user[i]) == 96 or 123 <= ord(username_user[i]) <= 127)
         if kondisi_salah:
             return False
-        else:
-            return True
+    return True
 
 def register(user_data):
     nama = input("Masukkan nama: ")
@@ -65,7 +63,6 @@ def login(user):
         for row in user:
             if row[1] == username_input and row[3] == password_input:
                 print('Halo ' + username_input + '! Selamat datang di "Binomo".')
-
                 if row[4] == 'Admin':
                     aksesadmin = True
                 else:
@@ -74,8 +71,3 @@ def login(user):
                 return (aksesadmin,idcurrentuser)
                 #akses['akun'] = data
         print("Password atau username salah atau tidak ditemukan.")
-
-
-#
-#
-#
